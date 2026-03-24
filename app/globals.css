@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-brown: #4A3E31;
+  --color-brand-brown-light: #5C4D3D;
+  --color-brand-brown-dark: #382F25;
+  --color-brand-bronze: #A68B67;
+  --color-brand-beige: #C4B49F;
+  --color-brand-nude: #F8F5F2;
+  --color-brand-dark: #2D2424;
+  
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-brand-nude text-brand-dark;
+}

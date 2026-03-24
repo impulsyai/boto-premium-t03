@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boto Premium - Harmonização Facial & Estética</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            nude: '#fdf8f6',
+                            rose: '#e2d1c3',
+                            brown: '#8b5e3c',
+                            'brown-light': '#a67c52',
+                            dark: '#2c1810',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .backdrop-blur-md { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .hero-image-clip { border-radius: 10rem 10rem 2rem 2rem; }
+    </style>
+</head>
+<body class="font-sans text-stone-900 bg-white overflow-x-hidden">
+
+    <!-- Navbar -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-brand-nude/80 backdrop-blur-md shadow-sm py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-brand-brown text-brand-brown font-serif text-xl italic font-bold group-hover:bg-brand-brown group-hover:text-white transition-colors duration-300">
+                    BP
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-xl font-bold text-brand-dark leading-none tracking-tight">
+                        BOTO PREMIUM
+                    </span>
+                    <span class="text-[10px] uppercase tracking-widest text-brand-brown mt-1">
+                        Harmonização Facial & Estética
+                    </span>
+                </div>
+            </a>
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#sobre" class="text-sm font-medium text-gray-600 hover:text-brand-brown transition-colors tracking-wide">A Clínica</a>
+                <a href="#tratamentos" class="text-sm font-medium text-gray-600 hover:text-brand-brown transition-colors tracking-wide">Tratamentos</a>
+                <a href="#equipe" class="text-sm font-medium text-gray-600 hover:text-brand-brown transition-colors tracking-wide">Equipe</a>
+                <a href="#localizacao" class="text-sm font-medium text-gray-600 hover:text-brand-brown transition-colors tracking-wide">Localização</a>
+                <a href="https://wa.me/5511999112234" target="_blank" class="flex items-center gap-2 bg-brand-brown text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-brand-brown-light transition-all shadow-md">
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                    Agendar
+                </a>
+            </nav>
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-brand-dark hover:text-brand-brown transition-colors" onclick="toggleMobileMenu()">
+                <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <!-- Mobile Nav -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-brand-rose/50 overflow-hidden shadow-xl">
+            <div class="px-4 py-6 flex flex-col gap-4">
+                <a href="#sobre" class="text-base font-medium text-brand-dark hover:text-brand-brown py-2" onclick="toggleMobileMenu()">A Clínica</a>
+                <a href="#tratamentos" class="text-base font-medium text-brand-dark hover:text-brand-brown py-2" onclick="toggleMobileMenu()">Tratamentos</a>
+                <a href="#equipe" class="text-base font-medium text-brand-dark hover:text-brand-brown py-2" onclick="toggleMobileMenu()">Equipe</a>
+                <a href="#localizacao" class="text-base font-medium text-brand-dark hover:text-brand-brown py-2" onclick="toggleMobileMenu()">Localização</a>
+                <a href="https://wa.me/5511999112234" target="_blank" class="flex items-center justify-center gap-2 bg-brand-brown text-white px-5 py-3 rounded-full text-base font-medium hover:bg-brand-brown-light transition-colors mt-4 shadow-md">
+                    <i data-lucide="phone" class="w-5 h-5"></i>
+                    Agendar Consulta
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-brand-nude">
+            <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-rose rounded-full mix-blend-multiply filter blur-3xl opacity-50 -translate-y-1/2 translate-x-1/3"></div>
+            <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-white rounded-full mix-blend-multiply filter blur-3xl opacity-50 translate-y-1/3 -translate-x-1/4"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <span class="inline-block py-1.5 px-4 rounded-full bg-white text-brand-brown text-xs font-bold tracking-widest uppercase mb-6 shadow-sm border border-brand-rose">
+                            Estética Facial Avançada em São Paulo
+                        </span>
+                        <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif font-medium text-brand-dark leading-[1.1] mb-6">
+                            A pele perfeita a <span class="italic text-brand-brown">poucas sessões</span> de você
+                        </h1>
+                        <p class="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed font-light">
+                            Especialista em Harmonização Facial, Rinomodelação e Botox. Protocolos modernos e personalizados para o seu bem-estar e autoestima.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-5">
+                            <a href="https://wa.me/5511999112234" target="_blank" class="flex items-center justify-center gap-2 bg-brand-brown text-white px-8 py-4 rounded-full text-base font-medium hover:bg-brand-brown-light transition-all shadow-lg">
+                                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                                Agende sua avaliação
+                            </a>
+                            <a href="#tratamentos" class="flex items-center justify-center gap-2 bg-transparent text-brand-dark border border-brand-dark/20 px-8 py-4 rounded-full text-base font-medium hover:border-brand-brown hover:text-brand-brown transition-all">
+                                Conhecer Tratamentos
+                                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <div class="relative aspect-[3/4] md:aspect-[4/5] hero-image-clip overflow-hidden shadow-2xl border-8 border-white">
+                            <img src="./boto_perfil.png" alt="Boto Premium" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-brown/20 to-transparent mix-blend-overlay"></div>
+                        </div>
+                        <div class="absolute -bottom-8 -left-8 md:bottom-12 md:-left-12 bg-white p-6 rounded-3xl shadow-xl max-w-[220px] border border-brand-rose">
+                            <div class="flex items-center gap-4 mb-3">
+                                <div class="w-14 h-14 rounded-full bg-brand-rose flex items-center justify-center text-brand-brown font-serif font-bold text-2xl">BP</div>
+                                <div class="text-sm font-bold leading-tight text-brand-dark">Estética<br>Avançada</div>
+                            </div>
+                            <p class="text-xs text-gray-500 leading-relaxed">Cuidado especializado para a saúde e beleza da sua pele.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section (A Clínica) -->
+        <section id="sobre" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="grid grid-cols-2 gap-6 relative">
+                        <div class="relative aspect-[3/4] rounded-[2rem] overflow-hidden mt-12 shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=600&auto=format&fit=crop" alt="Clínica" class="w-full h-full object-cover">
+                        </div>
+                        <div class="relative aspect-[3/4] rounded-[2rem] overflow-hidden shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=600&auto=format&fit=crop" alt="Atendimento" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 bg-white rounded-full flex items-center justify-center shadow-2xl z-10 border-4 border-brand-nude">
+                            <div class="w-24 h-24 rounded-full border border-brand-rose flex items-center justify-center bg-brand-nude">
+                                <span class="font-serif text-4xl text-brand-brown italic">B</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="text-sm font-bold tracking-widest text-brand-brown uppercase mb-3">Sobre a Clínica</h2>
+                        <h3 class="text-4xl md:text-5xl font-serif font-medium text-brand-dark mb-6 leading-tight">
+                            Excelência em <br> <span class="italic text-brand-brown">estética avançada</span>
+                        </h3>
+                        <div class="space-y-5 text-gray-600 mb-10 leading-relaxed font-light text-lg">
+                            <p>A Boto Premium nasceu com o propósito de elevar a autoestima e realçar a beleza natural de cada paciente. Somos especialistas em procedimentos de alta performance.</p>
+                            <p>Com foco em resultados reais e atendimento humanizado, oferecemos protocolos exclusivos de Harmonização Facial, Botox, Preenchimento e Bioestimuladores, sempre utilizando as melhores tecnologias do mercado.</p>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="flex gap-5 items-start">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-brand-rose flex items-center justify-center shadow-sm border border-brand-brown/10">
+                                    <i data-lucide="shield-check" class="w-5 h-5 text-brand-brown"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-serif font-medium text-brand-dark mb-1">Segurança</h4>
+                                    <p class="text-sm text-gray-500 font-light">Protocolos rigorosos e equipamentos aprovados pela ANVISA.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-5 items-start">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-brand-rose flex items-center justify-center shadow-sm border border-brand-brown/10">
+                                    <i data-lucide="heart" class="w-5 h-5 text-brand-brown"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-serif font-medium text-brand-dark mb-1">Atendimento Humanizado</h4>
+                                    <p class="text-sm text-gray-500 font-light">Cuidado focado nas necessidades únicas de cada paciente.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-5 items-start">
+                                <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-brand-rose flex items-center justify-center shadow-sm border border-brand-brown/10">
+                                    <i data-lucide="sparkles" class="w-5 h-5 text-brand-brown"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-serif font-medium text-brand-dark mb-1">Tecnologia</h4>
+                                    <p class="text-sm text-gray-500 font-light">As mais modernas tecnologias para resultados superiores.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Treatments Section -->
+        <section id="tratamentos" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="flex items-center justify-center gap-2 mb-4">
+                        <i data-lucide="sparkles" class="w-5 h-5 text-brand-brown"></i>
+                        <h2 class="text-sm font-bold tracking-widest text-brand-brown uppercase">Especialidades</h2>
+                        <i data-lucide="sparkles" class="w-5 h-5 text-brand-brown"></i>
+                    </div>
+                    <h3 class="text-4xl md:text-5xl font-serif font-medium text-brand-dark mb-6">
+                        Nossos <span class="italic text-brand-brown">Procedimentos</span>
+                    </h3>
+                    <p class="text-gray-600 text-lg font-light">Protocolos exclusivos e tecnologias avançadas para revelar a sua melhor versão.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- T1 -->
+                    <div class="group relative aspect-[3/4] rounded-3xl overflow-hidden cursor-pointer shadow-md" onclick="openTreatmentModal('harmonizacao')">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800&auto=format" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/40 to-transparent"></div>
+                        <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                            <h4 class="text-2xl font-serif font-medium text-white mb-3">Harmonização Facial</h4>
+                            <p class="text-sm text-white/80 mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Realce seus traços naturais com equilíbrio e sofisticação.</p>
+                            <div class="flex items-center font-medium text-sm text-brand-nude">
+                                <span class="border-b border-brand-nude/30 pb-1">Saiba mais</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- T2 -->
+                    <div class="group relative aspect-[3/4] rounded-3xl overflow-hidden cursor-pointer shadow-md" onclick="openTreatmentModal('botox')">
+                        <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc2069?q=80&w=800&auto=format" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/40 to-transparent"></div>
+                        <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                            <h4 class="text-2xl font-serif font-medium text-white mb-3">Toxina Botulínica</h4>
+                            <p class="text-sm text-white/80 mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Suavização de rugas de expressão com naturalidade.</p>
+                            <div class="flex items-center font-medium text-sm text-brand-nude">
+                                <span class="border-b border-brand-nude/30 pb-1">Saiba mais</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- T3 -->
+                    <div class="group relative aspect-[3/4] rounded-3xl overflow-hidden cursor-pointer shadow-md" onclick="openTreatmentModal('preenchimento')">
+                        <img src="https://images.unsplash.com/photo-1552693673-1bf958298935?q=80&w=800&auto=format" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/40 to-transparent"></div>
+                        <div class="absolute inset-0 p-8 flex flex-col justify-end">
+                            <h4 class="text-2xl font-serif font-medium text-white mb-3">Preenchimento Labial</h4>
+                            <p class="text-sm text-white/80 mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Volume e contorno definidos para um sorriso perfeito.</p>
+                            <div class="flex items-center font-medium text-sm text-brand-nude">
+                                <span class="border-b border-brand-nude/30 pb-1">Saiba mais</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Before/After Section -->
+        <section class="py-24 bg-brand-nude">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-sm font-bold tracking-widest text-brand-brown uppercase mb-3">Resultados</h2>
+                    <h3 class="text-4xl md:text-5xl font-serif font-medium text-brand-dark mb-6">Antes e <span class="italic text-brand-brown">Depois</span></h3>
+                    <p class="text-gray-600 text-lg font-light">Resultados reais de pacientes que confiaram em nossos protocolos.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- B/A 1 -->
+                    <div class="group relative rounded-[2rem] overflow-hidden shadow-lg bg-white">
+                        <div class="grid grid-cols-2">
+                            <div class="relative aspect-[3/4]">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format" class="w-full h-full object-cover grayscale opacity-80">
+                                <div class="absolute top-4 left-4 bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Antes</div>
+                            </div>
+                            <div class="relative aspect-[3/4]">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format" class="w-full h-full object-cover">
+                                <div class="absolute top-4 right-4 bg-brand-brown text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Depois</div>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                            <h4 class="text-white font-serif text-xl mb-1">Retirada de Microvasos</h4>
+                            <p class="text-white/80 text-sm">Pernas livres de vasinhos</p>
+                        </div>
+                    </div>
+                    <!-- B/A 2 -->
+                    <div class="group relative rounded-[2rem] overflow-hidden shadow-lg bg-white">
+                        <div class="grid grid-cols-2">
+                            <div class="relative aspect-[3/4]">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format" class="w-full h-full object-cover grayscale opacity-80">
+                                <div class="absolute top-4 left-4 bg-black/50 backdrop-blur-sm text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Antes</div>
+                            </div>
+                            <div class="relative aspect-[3/4]">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format" class="w-full h-full object-cover">
+                                <div class="absolute top-4 right-4 bg-brand-brown text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Depois</div>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                            <h4 class="text-white font-serif text-xl mb-1">Tratamento de Melasma</h4>
+                            <p class="text-white/80 text-sm">Protocolo clareador avançado</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="https://www.instagram.com/botopremium" target="_blank" class="inline-flex items-center justify-center gap-2 text-brand-brown font-medium hover:text-brand-brown-light transition-colors">
+                        Ver mais resultados no nosso Instagram <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Differentials Section -->
+        <section class="py-24 bg-white border-y border-brand-rose/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-sm font-bold tracking-widest text-brand-brown uppercase mb-3">Diferenciais</h2>
+                        <h3 class="text-4xl md:text-5xl font-serif font-medium text-brand-dark mb-6">Por que escolher a <span class="italic text-brand-brown">Boto Premium</span>?</h3>
+                        <p class="text-gray-600 text-lg mb-10 leading-relaxed font-light">Nosso compromisso é com a sua autoestima, segurança e satisfação. Combinamos expertise com as melhores tecnologias de harmonização.</p>
+                        <a href="https://wa.me/5511999112234" target="_blank" class="inline-block bg-brand-brown text-white px-8 py-4 rounded-full font-medium hover:bg-brand-brown-light transition-all shadow-lg hover:-translate-y-1">Fale conosco agora</a>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-4 text-sm font-medium">
+                        <div class="flex items-start gap-4 bg-brand-nude p-6 rounded-2xl border border-brand-rose">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-brown shrink-0"></i>
+                            <span>Atendimento altamente especializado</span>
+                        </div>
+                        <div class="flex items-start gap-4 bg-brand-nude p-6 rounded-2xl border border-brand-rose">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-brown shrink-0"></i>
+                            <span>Equipamentos modernos e aprovados</span>
+                        </div>
+                        <div class="flex items-start gap-4 bg-brand-nude p-6 rounded-2xl border border-brand-rose">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-brown shrink-0"></i>
+                            <span>Atendimento personalizado e humanizado</span>
+                        </div>
+                        <div class="flex items-start gap-4 bg-brand-nude p-6 rounded-2xl border border-brand-rose">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-brown shrink-0"></i>
+                            <span>Ambiente confortável e acolhedor</span>
+                        </div>
+                        <div class="flex items-start gap-4 bg-brand-nude p-6 rounded-2xl border border-brand-rose">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-brown shrink-0"></i>
+                            <span>Protocolos seguros e exclusivos</span>
+                        </div>
+                        <div class="flex items-start gap-4 bg-brand-nude p-6 rounded-2xl border border-brand-rose">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-brown shrink-0"></i>
+                            <span>Acompanhamento contínuo de resultados</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="equipe" class="py-24 bg-white relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="relative">
+                        <div class="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl relative z-10">
+                            <img src="./boto_perfil.png" alt="Boto Premium" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-brand-rose rounded-full mix-blend-multiply filter blur-2xl opacity-50 z-0"></div>
+                        <div class="absolute -top-6 -left-6 w-32 h-32 bg-brand-rose rounded-full mix-blend-multiply filter blur-2xl opacity-50 z-0"></div>
+                    </div>
+                    <div>
+                        <span class="text-sm font-bold tracking-widest text-brand-brown uppercase mb-4 block">A Especialista</span>
+                        <h3 class="text-5xl font-serif font-medium text-brand-dark mb-4">Boto <span class="italic text-brand-brown">Premium</span></h3>
+                        <p class="text-brand-brown font-medium text-lg mb-8">Especialistas em Harmonização e Estética Avançada</p>
+                        
+                        <div class="space-y-6 text-gray-600 font-light text-lg leading-relaxed mb-10">
+                            <p>Com uma paixão profunda por realçar a beleza natural, dedico minha carreira a proporcionar não apenas tratamentos estéticos, mas verdadeiras experiências de autocuidado e renovação da autoestima.</p>
+                            <p>Acredito que cada pessoa é única e merece um atendimento totalmente personalizado. Por isso, estou sempre em busca das melhores e mais seguras técnicas do mercado para oferecer resultados de excelência.</p>
+                        </div>
+
+                        <ul class="space-y-4 mb-12">
+                            <li class="flex items-center gap-3 text-gray-700">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-brown"></i>
+                                <span class="font-light">Atendimento humanizado e personalizado</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-700">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-brown"></i>
+                                <span class="font-light">Especialistas em procedimentos injetáveis</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-700">
+                                <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-brown"></i>
+                                <span class="font-light">Foco em resultados naturais e duradouros</span>
+                            </li>
+                        </ul>
+
+                        <div class="pt-8 border-t border-gray-100">
+                            <p class="font-serif italic text-2xl text-brand-dark leading-relaxed">
+                                "Dedico meu cuidado à pessoa mais incrível do mundo: Você."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-24 bg-brand-rose/20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-sm font-bold tracking-widest text-brand-brown uppercase mb-3">Depoimentos</h2>
+                    <h3 class="text-4xl md:text-5xl font-serif font-medium text-brand-dark mb-6">O que dizem nossas <span class="italic text-brand-brown">pacientes</span></h3>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- T1 -->
+                    <div class="bg-white p-8 rounded-[2rem] shadow-sm hover:shadow-xl transition-all duration-300 relative">
+                        <i data-lucide="quote" class="absolute top-8 right-8 w-10 h-10 text-brand-rose opacity-50"></i>
+                        <div class="flex gap-1 mb-6 text-brand-brown">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mb-8 italic font-light">"A clínica é maravilhosa! O atendimento da equipe Boto Premium é impecável. Fiz minha harmonização e o resultado ficou super natural, exatamente como eu queria."</p>
+                        <h4 class="font-serif font-medium text-brand-dark text-lg">Juliana Mendes</h4>
+                        <p class="text-sm text-brand-brown">Harmonização Facial</p>
+                    </div>
+                    <!-- T2 -->
+                    <div class="bg-white p-8 rounded-[2rem] shadow-sm hover:shadow-xl transition-all duration-300 relative text-left">
+                        <i data-lucide="quote" class="absolute top-8 right-8 w-10 h-10 text-brand-rose opacity-50"></i>
+                        <div class="flex gap-1 mb-6 text-brand-brown">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mb-8 italic font-light">"Ambiente super acolhedor e profissionais excelentes. Sinto muita segurança em realizar meus procedimentos aqui. Os resultados do preenchimento labial foram incríveis."</p>
+                        <h4 class="font-serif font-medium text-brand-dark text-lg">Carolina Freitas</h4>
+                        <p class="text-sm text-brand-brown">Preenchimento</p>
+                    </div>
+                    <!-- T3 -->
+                    <div class="bg-white p-8 rounded-[2rem] shadow-sm hover:shadow-xl transition-all duration-300 relative text-left">
+                        <i data-lucide="quote" class="absolute top-8 right-8 w-10 h-10 text-brand-rose opacity-50"></i>
+                        <div class="flex gap-1 mb-6 text-brand-brown">
+                            <i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i><i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed mb-8 italic font-light">"Minha autoestima é outra. A abordagem da Boto Premium e o cuidado com cada detalhe fizeram toda a diferença no meu rejuvenescimento facial."</p>
+                        <h4 class="font-serif font-medium text-brand-dark text-lg">Amanda Oliveira</h4>
+                        <p class="text-sm text-brand-brown">Toxina Botulínica</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="py-24 bg-brand-nude">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 items-center text-center">
+                <h2 class="text-4xl md:text-5xl font-serif font-medium text-brand-dark mb-20">Como funciona o <span class="italic text-brand-brown">atendimento</span></h2>
+                <div class="grid md:grid-cols-3 gap-12 relative">
+                    <div class="absolute top-12 left-[15%] right-[15%] h-px bg-brand-brown/20 hidden md:block"></div>
+                    <div class="relative z-10 flex flex-col items-center group">
+                        <div class="w-24 h-24 rounded-full bg-white shadow-md flex items-center justify-center text-brand-brown mb-8 border border-brand-rose group-hover:scale-110 transition-transform">
+                            <i data-lucide="message-square" class="w-8 h-8"></i>
+                        </div>
+                        <h4 class="text-2xl font-serif font-medium text-brand-dark mb-4">1. Agende seu horário</h4>
+                        <p class="text-gray-600 font-light max-w-xs">Pelo WhatsApp, escolha o melhor horário para sua consulta.</p>
+                    </div>
+                    <div class="relative z-10 flex flex-col items-center group">
+                        <div class="w-24 h-24 rounded-full bg-white shadow-md flex items-center justify-center text-brand-brown mb-8 border border-brand-rose group-hover:scale-110 transition-transform">
+                            <i data-lucide="clipboard-check" class="w-8 h-8"></i>
+                        </div>
+                        <h4 class="text-2xl font-serif font-medium text-brand-dark mb-4">2. Avaliação</h4>
+                        <p class="text-gray-600 font-light max-w-xs">Análise detalhada das suas necessidades e objetivos.</p>
+                    </div>
+                    <div class="relative z-10 flex flex-col items-center group">
+                        <div class="w-24 h-24 rounded-full bg-white shadow-md flex items-center justify-center text-brand-brown mb-8 border border-brand-rose group-hover:scale-110 transition-transform">
+                            <i data-lucide="sparkles" class="w-8 h-8"></i>
+                        </div>
+                        <h4 class="text-2xl font-serif font-medium text-brand-dark mb-4">3. Plano Personalizado</h4>
+                        <p class="text-gray-600 font-light max-w-xs">Receba um protocolo de tratamento exclusivo para você.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section id="localizacao" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-sm font-bold tracking-widest text-brand-brown uppercase mb-3 text-left">Localização</h2>
+                        <h3 class="text-4xl md:text-5xl font-serif font-medium text-brand-dark mb-10 text-left">Venha nos <span class="italic text-brand-brown">visitar</span></h3>
+                        <div class="space-y-8 mb-12 text-left items-start">
+                            <div class="flex items-start gap-5">
+                                <div class="w-12 h-12 rounded-full bg-brand-rose flex items-center justify-center text-brand-brown border border-brand-brown/10 shrink-0">
+                                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-serif font-medium text-brand-dark text-lg mb-1">Endereço</h4>
+                                    <p class="text-gray-600 font-light leading-relaxed">Av. Paulista, 1000 - Bela Vista<br>São Paulo - SP, 01310-100</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-5">
+                                <div class="w-12 h-12 rounded-full bg-brand-rose flex items-center justify-center text-brand-brown border border-brand-brown/10 shrink-0">
+                                    <i data-lucide="phone" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-serif font-medium text-brand-dark text-lg mb-1">Contato</h4>
+                                    <p class="text-gray-600 font-light leading-relaxed">(11) 99911-2234</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-5">
+                                <div class="w-12 h-12 rounded-full bg-brand-rose flex items-center justify-center text-brand-brown border border-brand-brown/10 shrink-0">
+                                    <i data-lucide="clock" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-serif font-medium text-brand-dark text-lg mb-1">Horário de Funcionamento</h4>
+                                    <p class="text-gray-600 font-light leading-relaxed">
+                                        Segunda a Sexta: 08:00 às 18:00<br>
+                                        Sábado: 08:00 às 12:00
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://maps.google.com/?q=Av.+Paulista,+1000+-+São+Paulo" target="_blank" class="inline-flex items-center gap-2 bg-brand-dark text-white px-8 py-4 rounded-2xl font-medium shadow-lg hover:-translate-y-1 transition-all">
+                            <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            Ver no Google Maps
+                        </a>
+                    </div>
+                    <div class="relative h-[450px] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white">
+                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3696.113!2d-51.393!3d-22.122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDA3JzE5LjIiUyA1McKwMjMnMzQuOCJX!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" class="grayscale contrast-[1.1]"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-32 relative overflow-hidden bg-brand-dark flex items-center justify-center min-h-[550px]">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1920&auto=format" class="w-full h-full object-cover opacity-30 mix-blend-luminosity">
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
+            </div>
+            <div class="max-w-4xl mx-auto px-4 relative z-10 text-center text-white">
+                <h2 class="text-5xl md:text-7xl font-serif font-medium mb-8 leading-tight">Pronta para cuidar da <br><span class="italic text-brand-nude">sua beleza?</span></h2>
+                <p class="text-lg md:text-xl text-brand-nude/70 mb-12 font-light max-w-2xl mx-auto leading-relaxed">
+                    Dê o primeiro passo para revelar a sua melhor versão. Agende sua avaliação e descubra o protocolo ideal para você.
+                </p>
+                <a href="https://wa.me/5511999112234" target="_blank" class="inline-flex items-center gap-4 bg-[#8b5e3c] text-white px-10 py-5 rounded-full text-lg font-medium hover:bg-brand-brown-light transition-all shadow-2xl hover:-translate-y-1">
+                    <i data-lucide="message-circle" class="w-6 h-6"></i> Agendar Consulta pelo WhatsApp
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-brand-dark text-white pt-24 pb-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid md:grid-cols-4 gap-16 mb-20">
+                    <div class="col-span-1">
+                        <div class="flex items-center gap-2 mb-8">
+                            <div class="w-10 h-10 border border-brand-brown text-brand-brown font-serif text-xl italic font-bold flex items-center justify-center rounded-full bg-white/5">BP</div>
+                            <span class="font-serif text-xl font-bold tracking-tight">BOTO PREMIUM <br><span class="text-[10px] text-brand-rose/60 uppercase tracking-widest font-sans">Harmonização</span></span>
+                        </div>
+                        <p class="text-brand-rose/60 text-sm font-light leading-relaxed mb-8">
+                            Referência em harmonização facial e procedimentos estéticos avançados. Realçando sua beleza com naturalidade.
+                        </p>
+                        <div class="flex gap-4">
+                            <a href="https://instagram.com/botopremium" target="_blank" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-brand-brown hover:border-brand-brown transition-all">
+                                <i data-lucide="instagram" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-serif text-lg mb-8">Acesso Rápido</h4>
+                        <ul class="space-y-4 text-brand-rose/60 text-sm font-light">
+                            <li><a href="#sobre" class="hover:text-white transition-colors">Sobre a Clínica</a></li>
+                            <li><a href="#tratamentos" class="hover:text-white transition-colors">Tratamentos</a></li>
+                            <li><a href="#equipe" class="hover:text-white transition-colors">Equipe</a></li>
+                            <li><a href="#localizacao" class="hover:text-white transition-colors">Localização</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-serif text-lg mb-8">Especialidades</h4>
+                        <ul class="space-y-4 text-brand-rose/60 text-sm font-light">
+                            <li><a href="#tratamentos" class="hover:text-white transition-colors">Harmonização Facial</a></li>
+                            <li><a href="#tratamentos" class="hover:text-white transition-colors">Preenchimento Labial</a></li>
+                            <li><a href="#tratamentos" class="hover:text-white transition-colors">Toxina Botulínica</a></li>
+                            <li><a href="#tratamentos" class="hover:text-white transition-colors">Bioestimuladores</a></li>
+                            <li><a href="#tratamentos" class="hover:text-white transition-colors">Rinomodelação</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-serif text-lg mb-8">Contato</h4>
+                        <ul class="space-y-6">
+                            <li class="flex gap-4 items-start text-brand-rose/60 text-sm font-light">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-brand-brown shrink-0"></i>
+                                <span>Av. Paulista, 1000 - Bela Vista<br>São Paulo - SP, 01310-100</span>
+                            </li>
+                            <li class="flex gap-4 items-start text-brand-rose/60 text-sm font-light">
+                                <i data-lucide="phone" class="w-5 h-5 text-brand-brown shrink-0"></i>
+                                <span>(11) 99911-2234</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-brand-rose/40 text-xs font-light tracking-wide text-center md:text-left">
+                    <p>© 2026 Boto Premium. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Treatment Modal -->
+    <div id="treatment-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 transition-all duration-300">
+        <div class="absolute inset-0 bg-brand-dark/80 backdrop-blur-md" onclick="closeTreatmentModal()"></div>
+        <div class="relative bg-brand-nude rounded-[2rem] overflow-hidden w-full max-w-4xl shadow-2xl z-10 flex flex-col md:flex-row max-h-[90vh] transform scale-95 opacity-0 transition-all duration-300" id="modal-content">
+            <button onclick="closeTreatmentModal()" class="absolute top-4 right-4 z-20 w-10 h-10 bg-white/50 backdrop-blur-md rounded-full flex items-center justify-center text-brand-dark hover:bg-white transition-colors">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div class="relative h-64 md:h-auto md:w-2/5 shrink-0">
+                <img src="" id="modal-image" alt="" class="w-full h-full object-cover">
+            </div>
+            <div class="p-8 md:p-12 overflow-y-auto md:w-3/5 flex flex-col justify-center bg-brand-nude">
+                <h3 class="text-3xl md:text-4xl font-serif font-medium text-brand-dark mb-6" id="modal-title"></h3>
+                <p class="text-gray-600 text-lg leading-relaxed mb-10 font-light" id="modal-desc"></p>
+                <div class="mt-auto">
+                    <a href="" id="modal-wa-link" target="_blank" class="inline-flex items-center justify-center gap-2 bg-brand-brown text-white px-8 py-4 rounded-full font-medium hover:bg-brand-brown-light transition-all shadow-lg hover:shadow-xl w-full sm:w-auto">
+           <!-- Floating WhatsApp -->
+    <a href="https://wa.me/5511999112234" target="_blank" class="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center group">
+        <span class="absolute right-full mr-4 bg-white text-gray-800 px-4 py-2 rounded-lg text-sm font-medium shadow-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Fale Conosco</span>
+        <i data-lucide="message-circle" class="w-8 h-8"></i>
+    </a>
+
+    <script>
+        lucide.createIcons();
+
+        const treatments = {
+            'harmonizacao': {
+                title: 'Harmonização Facial',
+                image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=800&auto=format',
+                desc: 'Procedimento estético que combina diferentes técnicas para equilibrar os traços do rosto, promovendo harmonia e beleza com naturalidade.'
+            },
+            'botox': {
+                title: 'Toxina Botulínica',
+                image: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc2069?q=80&w=800&auto=format',
+                desc: 'A aplicação de Botox é o tratamento ideal para suavizar rugas e linhas de expressão, prevenindo o envelhecimento e mantendo a pele jovem.'
+            },
+            'preenchimento': {
+                title: 'Preenchimento Labial',
+                image: 'https://images.unsplash.com/photo-1552693673-1bf958298935?q=80&w=800&auto=format',
+                desc: 'Definição de contorno e volume dos lábios com Ácido Hialurônico, garantindo lábios hidratados e harmoniosos com o seu rosto.'
+            }
+        };
+
+        function openTreatmentModal(id) {
+            const treatment = treatments[id];
+            const modal = document.getElementById('treatment-modal');
+            const content = document.getElementById('modal-content');
+            
+            document.getElementById('modal-title').innerText = treatment.title;
+            document.getElementById('modal-image').src = treatment.image;
+            document.getElementById('modal-desc').innerText = treatment.desc;
+            document.getElementById('modal-wa-link').href = `https://wa.me/5511999112234?text=Olá Boto Premium, gostaria de saber mais sobre ${treatment.title}`;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Trigger animation
+            setTimeout(() => {
+                content.classList.remove('scale-95', 'opacity-0');
+                content.classList.add('scale-100', 'opacity-100');
+            }, 10);
+            
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeTreatmentModal() {
+            const modal = document.getElementById('treatment-modal');
+            const content = document.getElementById('modal-content');
+            
+            content.classList.remove('scale-100', 'opacity-100');
+            content.classList.add('scale-95', 'opacity-0');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            const isHidden = menu.classList.contains('hidden');
+            
+            if (isHidden) {
+                menu.classList.remove('hidden');
+                icon.setAttribute('data-lucide', 'x');
+            } else {
+                menu.classList.add('hidden');
+                icon.setAttribute('data-lucide', 'menu');
+            }
+            lucide.createIcons();
+        }
+
+        // Close on Esc
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeTreatmentModal();
+        });
+    </script>
+</body>
+</html>
